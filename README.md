@@ -6,6 +6,7 @@ Existing FIWARE converter documentation :
 
 Smrt data models :
 - https://www.fiware.org/smart-data-models/ et https://smartdatamodels.org/
+- STAT-DCAT-AP data model : https://github.com/smart-data-models/dataModel.STAT-DCAT-AP
 
 DCAT problematics pointers :
 - https://hackmd.io/@WeYQtPurSw-OcPBBOdwKLQ/HkB1jchXs
