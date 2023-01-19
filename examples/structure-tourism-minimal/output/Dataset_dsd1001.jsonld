@@ -1,0 +1,41 @@
+{
+    "id": "urn:ngsi-ld:Dataset:dsd1001",
+    "type": "Dataset",
+    "dct:title": "http://bauhaus/structuresDeDonnees/structure/dsd1001",
+    "dct:identifier": "dsd1001",
+    "dct:language": {
+        "type": "Property",
+        "value": [
+            "fr"
+        ]
+    },
+    "dct:description": {
+        "type": "Property",
+        "value": {
+            "fr": "Capacités des hébergements touristiques"
+        }
+    },
+    "dct:created": "2021-01-07T11:58:08+00:00",
+    "dct:isRequiredBy": "Melodi-Chargement",
+    "dct:modified": "2021-01-07T12:00:31+00:00",
+    "dct:relation": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=FR1:TOURISME_CAPACITES(1.0)",
+    "stat:dimension": {
+        "type": "Property",
+        "value": [
+            "urn:ngsi-ld:DimensionProperty:timePeriod",
+            "urn:ngsi-ld:DimensionProperty:refArea"
+        ]
+    },
+    "stat:statUnitMeasure": {
+        "type": "Property",
+        "value": [
+            "urn:ngsi-ld:Measure:m1000"
+        ]
+    },
+    "@context": {
+        "sdmp": "https://smart-data-models.github.io/dataModel.STAT-DCAT-AP/context.jsonld",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "stat": "http://data.europa.eu/(xyz)/statdcat-ap/",
+        "dct": "http://purl.org/dc/terms/"
+    }
+}
