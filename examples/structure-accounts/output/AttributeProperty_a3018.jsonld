@@ -1,0 +1,34 @@
+{
+    "id": "urn:ngsi-ld:AttributeProperty:a3018",
+    "type": "AttributeProperty",
+    "dct:language": {
+        "type": "Property",
+        "value": [
+            "en",
+            "fr"
+        ]
+    },
+    "rdfs:label": {
+        "type": "Property",
+        "value": {
+            "en": "SDMX attribute COMMENT_DSET",
+            "fr": "Attribut SDMX "
+        }
+    },
+    "qb:concept": {
+        "type": "Property",
+        "value": "urn:ngsi-ld:Concept:comment"
+    },
+    "dct:created": "2022-01-15T07:00:00+00:00",
+    "dct:identifier": "a3018",
+    "dct:modified": "2022-01-15T07:30:00+00:00",
+    "rdfs:range": "xsd:string",
+    "@context": {
+        "sdmp": "https://smart-data-models.github.io/dataModel.STAT-DCAT-AP/context.jsonld",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "stat": "http://data.europa.eu/(xyz)/statdcat-ap/",
+        "dct": "http://purl.org/dc/terms/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "qb": "http://purl.org/linked-data/cube#"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "id": "urn:ngsi-ld:DimensionProperty:d1001",
+    "type": "DimensionProperty",
+    "dct:language": {
+        "type": "Property",
+        "value": [
+            "en",
+            "fr"
+        ]
+    },
+    "rdfs:label": {
+        "type": "Property",
+        "value": {
+            "en": "Accomation rating",
+            "fr": "Classement de l'hébergement"
+        }
+    },
+    "qb:codeList": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:ConceptSchema:hebergementsNombresEtoiles"
+    },
+    "qb:concept": {
+        "type": "Property",
+        "value": "urn:ngsi-ld:Concept:c2096"
+    },
+    "dct:created": "2021-01-07T11:52:12+00:00",
+    "dct:identifier": "d1001",
+    "dct:modified": "2021-01-07T11:52:41+00:00",
+    "rdfs:range": "http://bauhaus/codes/HebergementNombresEtoiles",
+    "@context": {
+        "sdmp": "https://smart-data-models.github.io/dataModel.STAT-DCAT-AP/context.jsonld",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "stat": "http://data.europa.eu/(xyz)/statdcat-ap/",
+        "dct": "http://purl.org/dc/terms/",
+        "qb": "http://purl.org/linked-data/cube#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    }
+}

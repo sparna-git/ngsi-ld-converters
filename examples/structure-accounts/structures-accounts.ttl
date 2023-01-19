@@ -1,0 +1,974 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sdmx: <http://purl.org/linked-data/sdmx#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo: <http://id.insee.fr/geo/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix geo-ont: <http://www.geonames.org/ontology#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix geo-pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix insee: <http://rdf.insee.fr/def/base#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix igeo: <http://rdf.insee.fr/def/geo#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001> a qb:DataStructureDefinition .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1001> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1002> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1003> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1004> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1005> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1006> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1007> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1008> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1009> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1010> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1011> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1012> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1013> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1014> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1015> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1016> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1017> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1018> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1019> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1021> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1022> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1023> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1024> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1025> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1026> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1027> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1028> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1029> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1030> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1031> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1032> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1033> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1034> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1035> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1036> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1037> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1038> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1039> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/slicekey-timeserie> a qb:SliceKey .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> a qb:DimensionProperty , qb:CodedProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> a qb:DimensionProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> a qb:AttributeProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> a qb:AttributeProperty .
+
+<http://bauhaus/codes/ajustementSaisonnier/N> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementsSaisonnier> a skos:ConceptScheme .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> a qb:AttributeProperty .
+
+<http://bauhaus/codes/concept/AjustementSaisonnier> a owl:Class .
+
+<http://bauhaus/codes/ajustementSaisonnier/_Z> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/T> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/C> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/R> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/K> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/X> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/M> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/I> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/S> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/W> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/Y> a skos:Concept , <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> rdfs:range <http://bauhaus/codes/AjustementSaisonnier> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> rdfs:range xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> rdfs:range xsd:gMonthDay .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> rdfs:range xsd:gMonthDay .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> rdfs:range xsd:integer .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> rdfs:range xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> rdfs:range xsd:string .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> rdfs:range xsd:double .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001> dc:contributor "DG75-H250" ;
+	dc:creator "DG57-L201" ;
+	dct:created "2022-01-15T08:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/codes/ajustementsSaisonnier> dct:created "2022-01-10T09:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> dct:created "2022-01-15T07:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001> dct:identifier "dsd3001" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1001> dct:identifier "cs1001" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1002> dct:identifier "cs1002" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1003> dct:identifier "cs1003" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1004> dct:identifier "cs1004" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1005> dct:identifier "cs1005" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1006> dct:identifier "cs1006" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1007> dct:identifier "cs1007" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1008> dct:identifier "cs1008" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1009> dct:identifier "cs1009" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1010> dct:identifier "cs1010" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1011> dct:identifier "cs1011" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1012> dct:identifier "cs1012" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1013> dct:identifier "cs1013" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1014> dct:identifier "cs1014" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1015> dct:identifier "cs1015" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1016> dct:identifier "cs1016" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1017> dct:identifier "cs1017" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1018> dct:identifier "cs1018" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1019> dct:identifier "cs1019" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1021> dct:identifier "cs1021" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1022> dct:identifier "cs1022" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1023> dct:identifier "cs1023" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1024> dct:identifier "cs1024" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1025> dct:identifier "cs1025" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1026> dct:identifier "cs1026" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1027> dct:identifier "cs1027" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1028> dct:identifier "cs1028" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1029> dct:identifier "cs1029" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1030> dct:identifier "cs1030" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1031> dct:identifier "cs1031" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1032> dct:identifier "cs1032" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1033> dct:identifier "cs1033" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1034> dct:identifier "cs1034" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1035> dct:identifier "cs1035" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1036> dct:identifier "cs1036" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1037> dct:identifier "cs1037" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1038> dct:identifier "cs1038" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1039> dct:identifier "cs1039" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> dct:identifier "d3002" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> dct:identifier "d3004" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> dct:identifier "d3005" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> dct:identifier "d3006" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> dct:identifier "d3007" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> dct:identifier "d3008" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> dct:identifier "d3009" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> dct:identifier "d3010" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> dct:identifier "d3011" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> dct:identifier "d3012" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> dct:identifier "d3013" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> dct:identifier "d3014" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> dct:identifier "a3003" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> dct:identifier "a3004" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> dct:identifier "a3005" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> dct:identifier "a3006" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> dct:identifier "a3007" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> dct:identifier "a3010" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> dct:identifier "a3012" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> dct:identifier "a3014" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> dct:identifier "a3016" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> dct:identifier "a3018" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> dct:identifier "a3019" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> dct:identifier "a3020" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001> dct:modified "2022-01-15T10:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/codes/ajustementsSaisonnier> dct:modified "2022-01-10T10:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> dct:modified "2022-01-15T07:30:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001> qb:component <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1001> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1002> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1003> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1004> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1005> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1006> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1007> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1008> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1009> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1010> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1011> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1012> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1013> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1014> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1015> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1016> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1017> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1018> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1019> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1020> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1021> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1022> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1023> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1024> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1025> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1026> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1027> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1028> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1029> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1030> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1031> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1032> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1033> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1034> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1035> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1036> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1037> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1038> , <http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1039> ;
+	qb:sliceKey <http://bauhaus/structuresDeDonnees/structure/dsd3001/slicekey-timeserie> ;
+	insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicSpecifique> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/codes/ajustementsSaisonnier> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/Prive> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> insee:validationState "Unpublished" .
+
+<http://bauhaus/codes/ajustementsSaisonnier> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001> rdfs:label "SDMX DSD NA_MAIN"@en , "SDMX NA_MAIN"@fr .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/slicekey-timeserie> rdfs:label "Timeseries"@en , "Séries temporelles"@fr .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> rdfs:label "SDMX dimension ADJUSTMENT"@en , "Dimension SDMX ADJUSTMENT"@fr .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> rdfs:label "SDMX dimension COUNTERPART_AREA"@en , "Dimension SDMX COUNTERPART_AREA"@fr .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> rdfs:label "SDMX dimension REF_SECTOR"@en , "Dimension SDMX "@fr .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> rdfs:label "Dimension SDMX "@fr , "SDMX dimension COUNTERPART_SECTOR"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> rdfs:label "Dimension SDMX "@fr , "SDMX dimension ACCOUNTING_ENTRY"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> rdfs:label "Dimension SDMX "@fr , "SDMX dimension STO"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> rdfs:label "Dimension SDMX "@fr , "SDMX dimension INSTR_ASSET"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> rdfs:label "Dimension SDMX "@fr , "SDMX dimension ACTIVITY"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> rdfs:label "Dimension SDMX "@fr , "SDMX dimension EXPENDITURE"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> rdfs:label "Dimension SDMX "@fr , "SDMX dimension UNIT_MEASURE"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> rdfs:label "Dimension SDMX "@fr , "SDMX dimension PRICES"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> rdfs:label "Dimension SDMX "@fr , "SDMX dimension TRANSFORMATION"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> rdfs:label "SDMX attribute COMMENT_OBS"@en , "Attribut SDMX "@fr .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> rdfs:label "Attribut SDMX "@fr , "SDMX attribute EMBARGO_DATE"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> rdfs:label "Attribut SDMX "@fr , "SDMX attribute REF_PERIOD_DETAIL"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> rdfs:label "Attribut SDMX "@fr , "SDMX attribute REPYEARSTART"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> rdfs:label "Attribut SDMX "@fr , "SDMX attribute REPYEAREND"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> rdfs:label "Attribut SDMX "@fr , "SDMX attribute REF_YEAR_PRICE"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> rdfs:label "Attribut SDMX "@fr , "SDMX attribute TABLE_IDENTIFIER"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> rdfs:label "Attribut SDMX "@fr , "SDMX attribute TITLE_COMPL"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> rdfs:label "Attribut SDMX "@fr , "SDMX attribute LAST_UPDATE"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> rdfs:label "Attribut SDMX "@fr , "SDMX attribute COMMENT_DSET"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> rdfs:label "Attribut SDMX "@fr , "SDMX attribute COMMENT_TS"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> rdfs:label "Attribut SDMX "@fr , "SDMX attribute PRE_BREAK_VALUE"@en .
+
+<http://bauhaus/codes/concept/AjustementSaisonnier> rdfs:label "list Seasonal ajustment class"@en , "Classe pour liste Ajustement saisonnier"@fr .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001> skos:notation "NA_MAIN" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> skos:notation "ADJUSTMENT" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> skos:notation "COUNTERPART_AREA" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> skos:notation "REF_SECTOR" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> skos:notation "COUNTERPART_SECTOR" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> skos:notation "ACCOUNTING_ENTRY" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> skos:notation "STO" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> skos:notation "INSTR_ASSET" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> skos:notation "ACTIVITY" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> skos:notation "EXPENDITURE" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> skos:notation "" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> skos:notation "PRICES" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> skos:notation "TRANSFORMATION" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> skos:notation "COMMENT_OBS" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> skos:notation "EMBARGO_DATE" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> skos:notation "REF_PERIOD_DETAIL" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> skos:notation "REPYEARSTART" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> skos:notation "REPYEAREND" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> skos:notation "REF_YEAR_PRICE" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> skos:notation "TABLE_IDENTIFIER" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> skos:notation "TITLE_COMPL" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> skos:notation "LAST_UPDATE" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> skos:notation "COMMENT_DSET" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> skos:notation "COMMENT_TS" .
+
+<http://bauhaus/codes/ajustementSaisonnier/N> skos:notation "N" .
+
+<http://bauhaus/codes/ajustementsSaisonnier> skos:notation "CL_ADJUSTMENT" .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> skos:notation "PRE_BREAK_VALUE" .
+
+<http://bauhaus/codes/ajustementSaisonnier/_Z> skos:notation "_Z" .
+
+<http://bauhaus/codes/ajustementSaisonnier/T> skos:notation "T" .
+
+<http://bauhaus/codes/ajustementSaisonnier/C> skos:notation "C" .
+
+<http://bauhaus/codes/ajustementSaisonnier/R> skos:notation "R" .
+
+<http://bauhaus/codes/ajustementSaisonnier/K> skos:notation "K" .
+
+<http://bauhaus/codes/ajustementSaisonnier/X> skos:notation "X" .
+
+<http://bauhaus/codes/ajustementSaisonnier/M> skos:notation "M" .
+
+<http://bauhaus/codes/ajustementSaisonnier/I> skos:notation "I" .
+
+<http://bauhaus/codes/ajustementSaisonnier/S> skos:notation "S" .
+
+<http://bauhaus/codes/ajustementSaisonnier/W> skos:notation "W" .
+
+<http://bauhaus/codes/ajustementSaisonnier/Y> skos:notation "Y" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/slicekey-timeserie> rdfs:comment "Grouping observations by TimePeriod"@en , "Groupement des observations pour obtenir des séries temporelles"@fr ;
+	qb:componentProperty sdmx-dimension:freq , <http://bauhaus/structuresDeDonnees/composants/dimension/d3002> , sdmx-dimension:refArea , <http://bauhaus/structuresDeDonnees/composants/dimension/d3004> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3005> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3006> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3007> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3008> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3009> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3010> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3011> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3012> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3013> , <http://bauhaus/structuresDeDonnees/composants/dimension/d3014> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1001> qb:order "1"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1002> qb:order "2"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1003> qb:order "3"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1004> qb:order "4"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1005> qb:order "5"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1006> qb:order "6"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1007> qb:order "7"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1008> qb:order "8"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1009> qb:order "9"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1010> qb:order "10"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1011> qb:order "11"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1012> qb:order "12"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1013> qb:order "13"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1014> qb:order "14"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1015> qb:order "15"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1001> qb:dimension sdmx-dimension:freq .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1002> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3002> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1003> qb:dimension sdmx-dimension:refArea .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1004> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3004> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1005> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3005> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1006> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3006> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1007> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3007> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1008> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3008> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1009> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3009> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1010> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3010> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1011> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3011> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1012> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3012> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1013> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3013> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1014> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d3014> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1015> qb:dimension sdmx-dimension:timePeriod .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1016> qb:measure sdmx-measure:obsValue .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1017> qb:componentRequired "true"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1018> qb:componentRequired "true"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1019> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1021> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1022> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1023> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1024> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1025> qb:componentRequired "true"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1026> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1027> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1028> qb:componentRequired "true"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1029> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1030> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1031> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1032> qb:componentRequired "true"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1033> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1034> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1035> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1036> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1037> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1038> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1039> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1017> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1018> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1019> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1028> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1029> qb:componentAttachment qb:DataSet .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1030> qb:componentAttachment qb:DataSet .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1031> qb:componentAttachment qb:DataSet .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1032> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1035> qb:componentAttachment qb:DataSet .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1036> qb:componentAttachment qb:Slice .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1017> qb:attribute sdmx-attribute:obsStatus .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1018> qb:attribute sdmx-attribute:confStatus .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1019> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3003> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1021> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3004> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1022> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3005> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1023> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3006> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1024> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3007> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1025> qb:attribute sdmx-attribute:timeFormat .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1026> qb:attribute sdmx-attribute:timePerCollect .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1027> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3010> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1028> qb:attribute sdmx-attribute:decimals .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1029> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3012> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1030> qb:attribute sdmx-attribute:title .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1031> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3014> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1032> qb:attribute sdmx-attribute:unitMult .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1033> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3016> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1034> qb:attribute sdmx-attribute:compilingOrg .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1035> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3018> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1036> qb:attribute <http://bauhaus/structuresDeDonnees/composants/attribut/a3019> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1037> qb:attribute sdmx-attribute:dataComp .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1038> qb:attribute sdmx-attribute:currency .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd3001/cs1039> qb:attribute sdmx-attribute:dissOrg .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> qb:concept sdmx-concept:adjustment .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3004> qb:concept <http://bauahus/concepts/definition/c4004> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3005> qb:concept <http://bauhaus/concepts/definition/c4005> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3006> qb:concept <http://bauhaus/concepts/definition/c4006> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3007> qb:concept <http://bauhaus/concepts/definition/c4007> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3008> qb:concept <http://bauhaus/concepts/definition/c4008> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3009> qb:concept <http://bauhaus/concepts/definition/c4009> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3010> qb:concept <http://id.insee.fr/concepts/definition/c1632> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3011> qb:concept <http://bauhaus/concepts/definition/c4011> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3012> qb:concept sdmx-concept:unitMeasure .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3013> qb:concept <http://bauhaus/concepts/definition/c4013> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3014> qb:concept <http://id.insee.fr/concepts/definition/c4014> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3003> qb:concept <http://bauhaus/concepts/definition/c4303> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3004> qb:concept sdmx-concept:embargoTime .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3005> qb:concept <http://bauhaus/concepts/definition/c4105> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3006> qb:concept <http://bauhaus/concepts/definition/c4109> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3007> qb:concept <http://id.insee.fr/concepts/definition/c4108> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3010> qb:concept <http://id.insee.fr/concepts/definition/c4107> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3012> qb:concept <http://id.insee.fr/concepts/definition/c4130> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3014> qb:concept <http://id.insee.fr/concepts/definition/c4137> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3016> qb:concept <http://bauhaus/concepts/definition/c4079> .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3018> qb:concept sdmx-concept:comment .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3019> qb:concept sdmx-concept:comment .
+
+<http://bauhaus/structuresDeDonnees/composants/attribut/a3020> qb:concept sdmx-concept:obsPreBreak .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d3002> qb:codeList <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/N> skos:prefLabel "Neither seasonally adjusted nor calendar adjusted data"@en , "Non ajustée"@fr .
+
+<http://bauhaus/codes/ajustementsSaisonnier> skos:prefLabel "Ajustement saisonnier"@en , "Seasonal ajustments"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/_Z> skos:prefLabel "Not applicable"@en , "Non applicable"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/T> skos:prefLabel "Trend"@en , "Tendance"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/C> skos:prefLabel "Trend-cycle data, calendar adjusted"@en , "Trend-cycle data, calendar adjusted"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/R> skos:prefLabel "Trend-cycle data, not calendar adjusted"@en , "Trend-cycle data, not calendar adjusted"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/K> skos:prefLabel "Calendar component"@en , "Composantse jours ouvrés"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/X> skos:prefLabel "Seasonal component"@en , "Composantse saisonnière"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/M> skos:prefLabel "Seasonal and calendar components"@en , "Composantses saisonnières et jours ouvrés"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/I> skos:prefLabel "Irregular component"@en , "Composante irrégulière"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/S> skos:prefLabel "Seasonally adjusted data, not calendar adjusted"@en , "Ajusté des effets saisonniers"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/W> skos:prefLabel "Calendar adjusted data, not seasonally adjusted"@en , "Ajusté des jours ouvrés"@fr .
+
+<http://bauhaus/codes/ajustementSaisonnier/Y> skos:prefLabel "Calendar and seasonally adjusted data"@en , "Ajusté des effets saisonniers et des jours ouvrés"@fr .
+
+<http://bauhaus/codes/ajustementsSaisonnier> rdfs:seeAlso <http://bauhaus/codes/concept/AjustementSaisonnier> .
+
+<http://bauhaus/codes/concept/AjustementSaisonnier> rdfs:seeAlso <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementsSaisonnier> skos:hasTopConcept <http://bauhaus/codes/ajustementSaisonnier/N> , <http://bauhaus/codes/ajustementSaisonnier/_Z> , <http://bauhaus/codes/ajustementSaisonnier/T> , <http://bauhaus/codes/ajustementSaisonnier/C> , <http://bauhaus/codes/ajustementSaisonnier/R> , <http://bauhaus/codes/ajustementSaisonnier/K> , <http://bauhaus/codes/ajustementSaisonnier/X> , <http://bauhaus/codes/ajustementSaisonnier/M> , <http://bauhaus/codes/ajustementSaisonnier/I> , <http://bauhaus/codes/ajustementSaisonnier/S> , <http://bauhaus/codes/ajustementSaisonnier/W> , <http://bauhaus/codes/ajustementSaisonnier/Y> .
+
+<http://bauhaus/codes/ajustementSaisonnier/N> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/_Z> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/T> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/C> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/R> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/K> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/X> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/M> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/I> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/S> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/W> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .
+
+<http://bauhaus/codes/ajustementSaisonnier/Y> skos:inScheme <http://bauhaus/codes/ajustementsSaisonnier> .

@@ -1,0 +1,432 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sdmx: <http://purl.org/linked-data/sdmx#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo: <http://id.insee.fr/geo/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix geo-ont: <http://www.geonames.org/ontology#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix geo-pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix insee: <http://rdf.insee.fr/def/base#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix igeo: <http://rdf.insee.fr/def/geo#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> a qb:DataStructureDefinition .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1000> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1001> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1002> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1003> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1004> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1005> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1006> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1007> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> a qb:DimensionProperty , qb:CodedProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> a qb:DimensionProperty , qb:CodedProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> a qb:MeasureProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> a qb:MeasureProperty .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> a skos:ConceptScheme .
+
+<http://bauhaus/codes/concept/HebergementNombresEtoiles> a owl:Class .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_T> a <http://bauhaus/codes/concept/HebergementNombresEtoiles> , skos:Concept .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_Z> a <http://bauhaus/codes/concept/HebergementNombresEtoiles> , skos:Concept .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/1> a <http://bauhaus/codes/concept/HebergementNombresEtoiles> , skos:Concept .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/2> a <http://bauhaus/codes/concept/HebergementNombresEtoiles> , skos:Concept .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/3> a <http://bauhaus/codes/concept/HebergementNombresEtoiles> , skos:Concept .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/4> a <http://bauhaus/codes/concept/HebergementNombresEtoiles> , skos:Concept .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/5> a <http://bauhaus/codes/concept/HebergementNombresEtoiles> , skos:Concept .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/NC> a <http://bauhaus/codes/concept/HebergementNombresEtoiles> , skos:Concept .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> a qb:DataStructureDefinition .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1000> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1001> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1002> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1003> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1004> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1005> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1006> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1007> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1008> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1009> a qb:ComponentSpecification .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> a qb:MeasureProperty .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> rdfs:subPropertyOf sdmx-measure:obsValue .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> rdfs:subPropertyOf sdmx-measure:obsValue .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> rdfs:range <http://bauhaus/codes/HebergementNombresEtoiles> .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> rdfs:range xsd:integer .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> rdfs:range xsd:integer .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> rdfs:range xsd:integer .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> dc:contributor "DG75-L201" ;
+	dc:creator "DG75-E420" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> dct:created "2021-07-01T11:58:08.642"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> dct:created "2021-07-01T11:50:37.3"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> dct:created "2021-07-01T11:52:12.906"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> dct:created "2021-07-01T11:27:30.075"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> dct:created "2021-07-01T11:29:13.726"^^xsd:dateTime .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> dct:created "2021-06-01T00:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> dct:created "2021-07-01T11:58:08.642"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> dct:created "2021-07-01T11:29:13.726"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> dct:identifier "dsd1001" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1000> dct:identifier "cs1000" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1001> dct:identifier "cs1001" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1002> dct:identifier "cs1002" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1003> dct:identifier "cs1003" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1004> dct:identifier "cs1004" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1005> dct:identifier "cs1005" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1006> dct:identifier "cs1006" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1007> dct:identifier "cs1007" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> dct:identifier "d1000" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> dct:identifier "d1001" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> dct:identifier "m1000" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> dct:identifier "m1001" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> dct:identifier "dsd1000" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1000> dct:identifier "cs1000" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1001> dct:identifier "cs1001" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1002> dct:identifier "cs1002" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1003> dct:identifier "cs1003" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1004> dct:identifier "cs1004" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1005> dct:identifier "cs1005" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1006> dct:identifier "cs1006" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1007> dct:identifier "cs1007" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1008> dct:identifier "cs1008" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1009> dct:identifier "cs1009" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> dct:identifier "m1001" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> dct:modified "2021-07-01T12:00:31.583"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> dct:modified "2021-07-01T11:50:37.3"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> dct:modified "2021-07-01T11:52:41.351"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> dct:modified "2021-07-01T11:27:30.075"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> dct:modified "2021-09-28T15:31:24.05"^^xsd:dateTime .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> dct:modified "2021-06-01T00:00:00.000"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> dct:modified "2021-07-01T12:00:31.583"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> dct:modified "2021-09-28T15:31:24.05"^^xsd:dateTime .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> qb:component <http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1000> , <http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1001> , <http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1002> , <http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1003> , <http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1004> , <http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1005> , <http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1006> , <http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1007> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> qb:component <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1000> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1001> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1002> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1003> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1004> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1005> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1006> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1007> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1008> , <http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1009> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> insee:validationState "Unpublished" .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> insee:validationState "Unpublished" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> rdfs:label "Capacités des hébergements touristiques"@fr , "Capacity of tourist accommodation establishments"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> rdfs:label "Activité de l’entreprise"@fr , "Activity of the company"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> rdfs:label "Accomation rating"@en , "Classement de l'hébergement"@fr .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> rdfs:label "Number of establishments"@en , "Nombre d'établissements"@fr .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> rdfs:label "Nombre de places"@fr , "Number of places"@en .
+
+<http://bauhaus/codes/concept/HebergementNombresEtoiles> rdfs:label " class HebergementNombresEtoiles"@en , "Classe HebergementNombresEtoiles"@fr .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> rdfs:label "Capacités des hébergements touristiques"@fr , "Capacity of tourist accommodation establishments"@en .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> rdfs:label "Nombre de lits"@fr , "Number of bedplaces"@en .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> skos:notation "TOURISME_CAPACITES" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> skos:notation "ACTIVITY" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> skos:notation "EST_RATING" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> skos:notation "EST" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> skos:notation "PLACE" .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> skos:notation "CL_TOURISME_EST_RATING" .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_T> skos:notation "_T" .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_Z> skos:notation "_Z" .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/1> skos:notation "1" .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/2> skos:notation "2" .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/3> skos:notation "3" .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/4> skos:notation "4" .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/5> skos:notation "5" .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/NC> skos:notation "NC" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> skos:notation "TOURISME_CAPACITES" .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> skos:notation "BEDPLACE" .
+
+<http://bauhaus/codes/concept/HebergementNombresEtoiles> rdfs:comment "Class for code list items"@en , "Classe d'objets pour le range des component property"@fr .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1000> qb:order "1"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1001> qb:order "2"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1002> qb:order "3"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1003> qb:order "4"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1004> qb:order "1"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1005> qb:order "2"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1000> qb:order "1"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1001> qb:order "2"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1002> qb:order "3"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1003> qb:order "4"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1004> qb:order "5"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1005> qb:order "1"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1006> qb:order "2"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1007> qb:order "3"^^xsd:int .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1000> qb:dimension sdmx-dimension:timePeriod .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1001> qb:dimension sdmx-dimension:refArea .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1002> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d1000> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1003> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d1001> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1000> qb:dimension sdmx-dimension:timePeriod .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1001> qb:dimension sdmx-dimension:refArea .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1002> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d1000> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1003> qb:dimension <http://bauhaus/structuresDeDonnees/composants/dimension/d1001> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1004> qb:dimension qb:measureType .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1004> qb:measure <http://bauhaus/structuresDeDonnees/composants/mesure/m1000> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1005> qb:measure <http://bauhaus/structuresDeDonnees/composants/mesure/m1001> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1005> qb:measure <http://bauhaus/structuresDeDonnees/composants/mesure/m1000> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1006> qb:measure <http://bauhaus/structuresDeDonnees/composants/mesure/m1001> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1007> qb:measure <http://bauhaus/structuresDeDonnees/composants/mesure/m1002> .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1006> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1007> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1008> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1009> qb:componentRequired "false"^^xsd:boolean .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1006> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1007> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1008> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1009> qb:componentAttachment qb:Observation .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1006> qb:attribute sdmx-attribute:obsStatus .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001/cs1007> qb:attribute sdmx-attribute:confStatus .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1008> qb:attribute sdmx-attribute:obsStatus .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000/cs1009> qb:attribute sdmx-attribute:confStatus .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> dct:relation "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=FR1:TOURISME_CAPACITES(1.0)" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> dct:relation "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=FR1:TOURISME_CAPACITES(1.0)" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1001> dct:isRequiredBy "Melodi-Chargement" , "Melodi-Diffusion" .
+
+<http://bauhaus/structuresDeDonnees/structure/dsd1000> dct:isRequiredBy "Melodi-Chargement" , "Melodi-Diffusion" .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> qb:concept <http://id.insee.fr/concepts/definition/c1632> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> qb:concept <http://id.insee.fr/concepts/definition/c2096> .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1000> qb:concept <http://id.insee.fr/concepts/definition/c1377> .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1001> qb:concept <http://bauhaus/concepts/definition/c4000> .
+
+<http://bauhaus/structuresDeDonnees/composants/mesure/m1002> qb:concept <http://bauhaus/concepts/definition/c4001> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000> qb:codeList <http://id.insee.fr/codes/nafr2/naf> .
+
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1001> qb:codeList <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> skos:prefLabel "Number of stars"@en , "Nombre d’étoiles"@fr .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_T> skos:prefLabel "All"@en , "Ensemble"@fr .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_Z> skos:prefLabel "Not relevant"@en , "Non pertinent"@fr .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/1> skos:prefLabel "1 star"@en , "1 étoile"@fr .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/2> skos:prefLabel "2 stars"@en , "2 étoiles"@fr .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/3> skos:prefLabel "3 stars"@en , "3 étoiles"@fr .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/4> skos:prefLabel "4 stars"@en , "4 étoiles"@fr .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/5> skos:prefLabel "5 stars"@en , "5 étoiles"@fr .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/NC> skos:prefLabel "Non rated"@en , "Non classé"@fr .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> rdfs:seeAlso <http://bauhaus/codes/concept/HebergementNombresEtoiles> .
+
+<http://bauhaus/codes/concept/HebergementNombresEtoiles> rdfs:seeAlso <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementsNombresEtoiles> skos:hasTopConcept <http://bauhaus/codes/hebergementNombresEtoiles/_T> , <http://bauhaus/codes/hebergementNombresEtoiles/_Z> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_T> skos:inScheme <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_Z> skos:inScheme <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/1> skos:inScheme <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/2> skos:inScheme <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/3> skos:inScheme <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/4> skos:inScheme <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/5> skos:inScheme <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/NC> skos:inScheme <http://bauhaus/codes/hebergementsNombresEtoiles> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/_T> skos:narrower <http://bauhaus/codes/hebergementNombresEtoiles/1> , <http://bauhaus/codes/hebergementNombresEtoiles/2> , <http://bauhaus/codes/hebergementNombresEtoiles/3> , <http://bauhaus/codes/hebergementNombresEtoiles/4> , <http://bauhaus/codes/hebergementNombresEtoiles/5> , <http://bauhaus/codes/hebergementNombresEtoiles/NC> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/1> skos:broader <http://bauhaus/codes/hebergementNombresEtoiles/_T> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/2> skos:broader <http://bauhaus/codes/hebergementNombresEtoiles/_T> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/3> skos:broader <http://bauhaus/codes/hebergementNombresEtoiles/_T> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/4> skos:broader <http://bauhaus/codes/hebergementNombresEtoiles/_T> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/5> skos:broader <http://bauhaus/codes/hebergementNombresEtoiles/_T> .
+
+<http://bauhaus/codes/hebergementNombresEtoiles/NC> skos:broader <http://bauhaus/codes/hebergementNombresEtoiles/_T> .

@@ -1,0 +1,28 @@
+{
+    "id": "urn:ngsi-ld:CatalogueDCAT-AP:37965bf5ac51c0726ec9822691e3db40",
+    "type": "CatalogueDCAT-AP",
+    "dataset": {
+        "type": "object",
+        "value": "urn:ngsi-ld:Dataset:dsd1001"
+    },
+    "language": {
+        "type": "Property",
+        "value": []
+    },
+    "description": {
+        "type": "Property",
+        "value": {}
+    },
+    "publisher": {
+        "type": "Property",
+        "value": ""
+    },
+    "title": {
+        "type": "Array",
+        "value": []
+    },
+    "@context": [
+        "https://raw.githubusercontent.com/SEMICeu/DCAT-AP/master/releases/1.1/dcat-ap_1.1.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.DCAT-AP/master/context.jsonld"
+    ]
+}
