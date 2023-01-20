@@ -17,3 +17,4 @@ DCAT problematics pointers :
 - In existing converter, why is URI mapped to dct:title and why is rdfs:label mapped to dct:description ?
 - Existing converter generates separate files in the output. Is there a reason for this ? could the output be in a single file ?
 - The STAT-DCAT-AP json-ld context at https://smart-data-models.github.io/dataModel.STAT-DCAT-AP/context.jsonld maps keys to wrong URIs. Is it intended ? This is a blocking issue as it forces us to use these URIs (and not the typical dct ones) so that we can then regenerate a JSON-LD valid according to the spec.
+- It seems there is an NGSI-V2 with key-values syntax for which it is not necessary to decompose the properties : https://github.com/smart-data-models/dataModel.STAT-DCAT-AP/blob/master/Dataset/doc/spec.md#datasetstat-dcat-ap-ngsi-v2-key-values-example is this interesting ?
