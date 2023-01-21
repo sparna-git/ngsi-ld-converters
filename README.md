@@ -25,3 +25,4 @@ DCAT problematics pointers :
 - Is there any constraint on the URIs to generate ? the current generators construct URIs like `urn:ngsi-ld:Measure:m1000` (using the local part of existing URI and crafting a new URI with urn:ngsi-ld prefix)
 - Should we create any dcat:Distribution ?
 - Does generating the Catalogue automatically has any interest ?
+- What is the scope exactly of what we need to transform ? the current converter converts properties, concepts, concept schemes, etc. but it looks like simple copy of the data. How should we deal with this ?
