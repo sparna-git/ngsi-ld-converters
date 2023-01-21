@@ -1,0 +1,56 @@
+[
+  {
+    "@id": "_:b0",
+    "@type": [
+      "https://uri.etsi.org/ngsi-ld/Property"
+    ],
+    "https://uri.etsi.org/ngsi-ld/hasObject": [
+      {
+        "@id": "http://purl.org/linked-data/sdmx/2009/dimension#refArea"
+      }
+    ]
+  },
+  {
+    "@id": "_:b1",
+    "@type": [
+      "https://uri.etsi.org/ngsi-ld/Property"
+    ],
+    "https://uri.etsi.org/ngsi-ld/hasObject": [
+      {
+        "@id": "http://purl.org/linked-data/sdmx/2009/dimension#timePeriod"
+      }
+    ]
+  },
+  {
+    "@id": "http://bauhaus/structuresDeDonnees/structure/dsd1001",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Dataset"
+    ],
+    "http://data.europa.eu/xyz/statdcat-ap/dimension": [
+      {
+        "@id": "_:b0"
+      },
+      {
+        "@id": "_:b1"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "Capacités des hébergements touristiques",
+        "@language": "fr"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/linked-data/sdmx/2009/dimension#refArea"
+  },
+  {
+    "@id": "http://purl.org/linked-data/sdmx/2009/dimension#timePeriod"
+  },
+  {
+    "@id": "http://www.w3.org/ns/dcat#Dataset"
+  },
+  {
+    "@id": "https://uri.etsi.org/ngsi-ld/Property"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    {
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "dct": "http://purl.org/dc/terms/",
+      "stat": "http://data.europa.eu/xyz/statdcat-ap/",
+      
+      "Dataset": "dcat:Dataset",
+      
+      "dct:title":{
+        "@container":"@language"
+      }
+    }
+  ],
+  "@type":"Dataset"
+}
