@@ -24,3 +24,4 @@ DCAT problematics pointers :
 - The prefix stat in StatDCAT-AP is not yet assigned : http://data.europa.eu/(xyz)/statdcat-ap/
 - Is there any constraint on the URIs to generate ? the current generators construct URIs like `urn:ngsi-ld:Measure:m1000` (using the local part of existing URI and crafting a new URI with urn:ngsi-ld prefix)
 - Should we create any dcat:Distribution ?
+- Does generating the Catalogue automatically has any interest ?
