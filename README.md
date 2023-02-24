@@ -1,4 +1,23 @@
-# ngsi-ld-converters
+# ngsi-ld Semantic Converter
+
+## Approach
+
+The approach taken to convert input RDF data to NGSI-LD is the following :
+
+1. Map source input data to target data structure at the semantic (= RDF triple) level
+   - this can be done in a number of ways, the proposed approach is to describe a serie of transformation rules using SHACL rules : https://www.w3.org/TR/shacl-af/#SPARQLRule
+   - this way each rule can be precisely identified, described, maintained, shared, etc. following linked data principles
+   - rules are executed using a SHACL processor (I have develop https://shacl-play.sparna.fr/play/home?lang=es which wraps TopBraid SHACL library : https://github.com/TopQuadrant/shacl)
+   - mapping rules deal exclusively with the semantic mapping from one model to another, they don't care about serialization. They could be reused in other technical/implementation contexts.
+   - The approach is only applicable to input RDF data.
+   - Sample rules to give you an idea are at https://github.com/sparna-git/ngsi-ld-converters/blob/main/rules/datacube-2-statdcatap/datacube-2-statdcatap.ttl
+2. Then serialize the output RDF in JSON-LD (any RDF library can do that)
+3. Then use JSON-LD Framing (https://www.w3.org/TR/json-ld11-framing/) to specify how the output triples should be serialized in a clean JSON-LD (use the JSON-LD contexts to map classes/properties to JSON keyx, specify which entity should come first, etc.)
+   - sample JSON-LD framing specification is at https://github.com/sparna-git/ngsi-ld-converters/blob/main/contexts/framing-context.jsonld
+4. Then, if needed, split the JSON-LD in multiple files
+   - splitting could be done earlier in the process, I don't know
+
+## Documentation pointers
 
 Existing FIWARE converter documentation : 
 - https://github.com/flopezag/IoTAgent-Turtle
@@ -11,7 +30,7 @@ Smart data models :
 DCAT problematics pointers :
 - https://hackmd.io/@WeYQtPurSw-OcPBBOdwKLQ/HkB1jchXs
 
-# Questions / remarks
+## Questions to Fernando and his answers
 
 > In existing converter, why are some properties reified (dct:description), and some not (dct:title, dct:identifier) ?
 
