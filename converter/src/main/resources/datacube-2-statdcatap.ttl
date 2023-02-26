@@ -1,0 +1,222 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix this: <http://data.sparna.fr/ontologies/datacube-2-statdcatap#> .
+
+<http://data.sparna.fr/ontologies/datacube-2-statdcatap>
+  rdf:type owl:Ontology ;
+  rdfs:label "Datacube 2 STAT-DCAT-AP ruleset"@en;
+  rdfs:comment """Converts a Datacube Description to STAT-DCAT-AP"""@en;
+  sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
+      sh:prefix "rdfs" ;
+    ] ;
+  sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
+      sh:prefix "owl" ;
+    ] ;
+   sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://www.w3.org/ns/shacl#"^^xsd:anyURI ;
+      sh:prefix "sh" ;
+    ] ;
+  sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ;
+      sh:prefix "xsd" ;
+    ] ;
+   sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+      sh:prefix "rdf" ;
+    ] ;
+    sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://datashapes.org/dash#"^^xsd:anyURI ;
+      sh:prefix "dash" ;
+    ] ;
+    sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://purl.org/linked-data/cube#"^^xsd:anyURI ;
+      sh:prefix "qb" ;
+    ] ;
+    sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://www.w3.org/ns/dcat#"^^xsd:anyURI ;
+      sh:prefix "dcat" ;
+    ] ;
+    sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://purl.org/dc/terms/"^^xsd:anyURI ;
+      sh:prefix "dct" ;
+    ] ;
+    sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "https://uri.etsi.org/ngsi-ld/"^^xsd:anyURI ;
+      sh:prefix "ngsi-ld" ;
+    ] ;
+    sh:declare [
+      rdf:type sh:PrefixDeclaration ;
+      sh:namespace "http://data.europa.eu/xyz/statdcat-ap/"^^xsd:anyURI ;
+      sh:prefix "stat" ;
+    ] ;
+.
+
+
+this:DataStructureDefinition_Shape
+  rdf:type sh:NodeShape ;
+  # Create DCAT Dataset
+  sh:rule this:CreateDataset;
+  # copy properties
+  sh:rule this:copy_dctCreated;
+  sh:rule this:copy_dctModified;
+  sh:rule this:copy_dctIdentifier;
+  sh:rule this:copy_dctIsRequiredBy;
+  sh:rule this:copy_dctRelation;
+  sh:rule this:copy_dctDescription;
+  # other rules
+  sh:rule this:rdfsLabelOrDctTitle2dctTitle;
+  sh:rule this:qbDimension2statDimension;
+
+  sh:target [
+      rdf:type sh:SPARQLTarget ;
+      sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+      sh:select """
+SELECT ?this
+WHERE {
+	?this a qb:DataStructureDefinition .
+}""" ;
+    ] ;
+.
+
+
+this:CreateDataset
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Creates DCAT Dataset" ;
+  rdfs:label "Creates DCAT Dataset" ;
+  sh:construct """
+      CONSTRUCT {
+        $this a dcat:Dataset .
+      }
+      WHERE {
+        $this a qb:DataStructureDefinition .
+      }
+      """ ;
+  sh:order 1 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
+
+this:copy_dctCreated
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Copies dct:created" ;
+  rdfs:label "Copies dct:created" ;
+  sh:construct """
+      CONSTRUCT { $this dct:created ?x . }
+      WHERE {     $this dct:created ?x . }
+      """ ;
+  sh:order 2 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
+
+this:copy_dctModified
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Copies dct:modified" ;
+  rdfs:label "Copies dct:modified" ;
+  sh:construct """
+      CONSTRUCT { $this dct:modified ?x . }
+      WHERE {     $this dct:modified ?x . }
+      """ ;
+  sh:order 2 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
+
+this:copy_dctIdentifier
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Copies dct:identifier" ;
+  rdfs:label "Copies dct:identifier" ;
+  sh:construct """
+      CONSTRUCT { $this dct:identifier ?x . }
+      WHERE {     $this dct:identifier ?x . }
+      """ ;
+  sh:order 2 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
+
+this:copy_dctIsRequiredBy
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Copies dct:isRequiredBy" ;
+  rdfs:label "Copies dct:isRequiredBy" ;
+  sh:construct """
+      CONSTRUCT { $this dct:isRequiredBy ?x . }
+      WHERE {     $this dct:isRequiredBy ?x . }
+      """ ;
+  sh:order 2 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
+
+this:copy_dctRelation
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Copies dct:relation" ;
+  rdfs:label "Copies dct:relation" ;
+  sh:construct """
+      CONSTRUCT { $this dct:relation ?x . }
+      WHERE {     $this dct:relation ?x . }
+      """ ;
+  sh:order 2 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
+
+this:copy_dctDescription
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Copies dct:description" ;
+  rdfs:label "Copies dct:description" ;
+  sh:construct """
+      CONSTRUCT { $this dct:description ?x . }
+      WHERE {     $this dct:description ?x . }
+      """ ;
+  sh:order 2 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
+
+
+this:rdfsLabelOrDctTitle2dctTitle
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Generates dct:title from rdfs:label or dct:title" ;
+  rdfs:label "Generates dct:title" ;
+  sh:construct """
+      CONSTRUCT {
+        $this dct:title ?x .
+      }
+      WHERE {
+        OPTIONAL { $this dct:title ?dctTitle . }
+        OPTIONAL { $this rdfs:label ?rdfsLabel . }
+        BIND(COALESCE(?dctTitle, ?rdfsLabel, "No title or label found"@en) AS ?x)
+      }
+      """ ;
+  sh:order 2 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
+
+this:qbDimension2statDimension
+  rdf:type sh:SPARQLRule ;
+  rdfs:comment "Generates stat:dimension" ;
+  rdfs:label "Generates stat:dimension" ;
+  sh:construct """
+      CONSTRUCT {
+        $this stat:dimension _:p .
+        _:p a ngsi-ld:Property .
+        _:p ngsi-ld:hasObject ?x .
+      }
+      WHERE {
+        $this qb:component/qb:dimension ?x .
+      }
+      """ ;
+  sh:order 2 ;
+  sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
+.
