@@ -1,0 +1,39 @@
+{
+    "id": "http://bauhaus/structuresDeDonnees/composants/dimension/d1000",
+    "type": "DimensionProperty",
+    "rdfs:label": [
+        {
+            "type": "Property",
+            "value": {
+                "@value": "Activity of the company",
+                "@language": "en"
+            }
+        },
+        {
+            "type": "Property",
+            "value": {  
+                "@value": "Activité de l’entreprise",
+                "@language": "fr"
+            }
+        }
+    ],
+    "qb:codeList": {
+        "type": "Relationship",
+        "object": "http://id.insee.fr/codes/nafr2/naf"
+    },
+    "qb:concept": {
+        "type": "Property",
+        "object": "http://id.insee.fr/concepts/definition/c1632"
+    },
+    "skos:notation" : "ACTIVITY",
+
+    "@context": [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        {
+            "sdmp": "https://smart-data-models.github.io/dataModel.STAT-DCAT-AP/context.jsonld",
+            "dcat": "http://www.w3.org/ns/dcat#",
+            "stat": "http://data.europa.eu/(xyz)/statdcat-ap/",
+            "dct":  "http://purl.org/dc/terms/"
+        }
+    ]
+}

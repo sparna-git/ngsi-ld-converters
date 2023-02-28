@@ -1,0 +1,26 @@
+{
+    "id": "http://bauhaus/structuresDeDonnees/structure/dsd1001",
+    "type": "Dataset",
+    "core:dimension": {
+        "type": "Property",
+        "object": "sdmx-dimension:timePeriod"
+    },
+    "core:statUnitMeasure": {
+        "type": "Property",
+        "object": "http://bauhaus/structuresDeDonnees/composants/mesure/m1000"
+    },
+    "core:attribute": {
+        "type": "Property",
+        "object": "sdmx-attribute:obsStatus"
+    },
+
+    "@context": [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        {
+            "sdmp": "https://smart-data-models.github.io/dataModel.STAT-DCAT-AP/context.jsonld",
+            "dcat": "http://www.w3.org/ns/dcat#",
+            "core": "http://data.europa.eu/m8g/",
+            "dct":  "http://purl.org/dc/terms/"
+        }
+    ]
+}

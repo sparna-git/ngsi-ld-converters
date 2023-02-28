@@ -81,7 +81,7 @@ public class NgsiLdConverterTestExecution implements Test {
 		// convert
 		outputModel = this.converter.convertRdfFile(input);
 		
-		System.out.println(this.converter.convertJsonFile(input));
+		
 		
 		// debug in output folder
 		try(FileOutputStream out = new FileOutputStream(new File(this.outputFolder, this.testFolder.getName()+".ttl"))) {
@@ -97,7 +97,7 @@ public class NgsiLdConverterTestExecution implements Test {
 				RDFDataMgr.read(expectedModel, in, RDFLanguages.filenameToLang(expected.getName(), Lang.RDFXML));
 			} catch (Exception e) {
 				result.addError(this, e);
-				throw new IllegalArgumentException("Problem with external.ttl in unit test "+this.testFolder.getName(), e);
+				throw new IllegalArgumentException("Problem with expected.ttl in unit test "+this.testFolder.getName(), e);
 			}			
 			
 			// test if isomorphic
@@ -110,6 +110,8 @@ public class NgsiLdConverterTestExecution implements Test {
 		} 
 		
 		String outputJsonLdString = converter.convertJsonFile(input);
+		
+		
 		
 		if(expectedJson.exists()) {
 			try(InputStream in = new FileInputStream(expectedJson)) {
@@ -129,7 +131,9 @@ public class NgsiLdConverterTestExecution implements Test {
 				}
 				
 				// compare
-				if(!outputJsonLd.equals(expectedJsonLd)) {
+				// if(!outputJsonLd.equals(expectedJsonLd)) {
+				if(!equalsJsonNode(outputJsonLd, expectedJsonLd)) {
+					System.out.println(outputJsonLdString);
 					result.addFailure(this, new AssertionFailedError("Test failed on "+this.testFolder));
 					System.out.println(prettyPrintDiff((ObjectNode)outputJsonLd, (ObjectNode)expectedJsonLd));
 					System.out.println(prettyPrintDiff((ObjectNode)expectedJsonLd, (ObjectNode)outputJsonLd));
@@ -162,13 +166,16 @@ public class NgsiLdConverterTestExecution implements Test {
 	
 	private static String prettyPrintDiff(JsonNode node1, JsonNode node2) {
 		StringBuffer sb = new StringBuffer();
+		
 		if(node1.getNodeType() == JsonNodeType.OBJECT) {
 			for (Iterator<Entry<String, JsonNode>> iterator = node1.fields(); iterator.hasNext();) {
 				Entry<String, JsonNode> entry = (Entry<String, JsonNode>) iterator.next();
 				if(!node2.has(entry.getKey())) {
 					sb.append("Missing "+entry.getKey()+"\n");
+				} else {
+					sb.append(prettyPrintDiff(entry.getValue(), node2.get(entry.getKey())));
 				}
-				sb.append(prettyPrintDiff(entry.getValue(), node2.get(entry.getKey())));
+				
 			}
 		}
 		
@@ -194,4 +201,53 @@ public class NgsiLdConverterTestExecution implements Test {
 		return sb.toString();
 	}
 
+	
+	public boolean equalsJsonNode(JsonNode n1, JsonNode n2)
+	{
+	    if (n1 == n2) return true;
+	    if (n1 == null) return false;
+	    if (n2 == null) return false;
+	    if (n1.getClass() != n2.getClass()) {
+	        return false;
+	    }
+	    if (n2.size() != n1.size()) {
+	        return false;
+	    }
+	    if (n1.fields() != null) {
+
+	        for (Iterator<Entry<String, JsonNode>> it = n1.fields(); it.hasNext();) {
+	        	Entry<String, JsonNode> en = it.next();
+	            String key = en.getKey();
+	            JsonNode value = en.getValue();
+
+	            JsonNode otherValue = n2.get(key);
+
+	            if (otherValue == null || !otherValue.equals(value)) {
+	                return false;
+	            }
+	        }
+	    } else {
+	    	// compares without the order
+	    	if(n1.size() > 0) {
+	    		boolean allFound = true;
+	    		for(int i =0;i<n1.size();i++) {
+					JsonNode entry = n1.get(i);
+					// look anywhere in n2
+					boolean found = false;
+					for(int j =0;j<n2.size();j++) {
+						if(entry.equals(n2.get(j))) {
+							found = true;
+						}
+					}
+					if(!found) {
+						allFound = false;
+					}
+				}
+	    		return allFound;
+	    	}
+	    }
+	    
+	    return true;
+	}
+	
 }

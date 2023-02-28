@@ -1,18 +1,10 @@
 {
-
     "id": "http://bauhaus/structuresDeDonnees/structure/dsd1001",
     "type": "Dataset",
-    "dct:title": {
-        "fr" : "Capacités des hébergements touristiques"
+    "dct:language": {
+        "type" : "Property",
+        "value" : "fr"
     },
-    "dct:identifier": "dsd1001",
-    "dct:isRequiredBy": [
-        "Melodi-Diffusion",
-        "Melodi-Chargement"            
-    ],
-    "dct:created": "2021-07-01T11:58:08.642",
-    "dct:modified": "2021-07-01T12:00:31.583",
-    "dct:relation": "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=FR1:TOURISME_CAPACITES(1.0)",
 
     "@context": [
         "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",

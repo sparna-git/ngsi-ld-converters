@@ -8,6 +8,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix insee: <http://rdf.insee.fr/def/base#> .
+@prefix ngsild: <https://uri.etsi.org/ngsi-ld/> .
 @prefix sdmx: <http://purl.org/linked-data/sdmx#> .
 @prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
 @prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
@@ -15,18 +16,24 @@
 @prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
 @prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
 
-
-
-<http://bauhaus/structuresDeDonnees/structure/dsd1001> a qb:DataStructureDefinition;
-  dct:created "2021-07-01T11:58:08.642"^^xsd:dateTime;
-  dct:identifier "dsd1001";
-  dct:isRequiredBy "Melodi-Chargement", "Melodi-Diffusion";
-  dct:modified "2021-07-01T12:00:31.583"^^xsd:dateTime;
-  dct:relation "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=FR1:TOURISME_CAPACITES(1.0)";
-  # mapped to dct:title if no dct:title is present
-  rdfs:label "Capacités des hébergements touristiques"@fr;
-  # ignored
-  insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique>;
-  # ignored
-  insee:validationState "Unpublished";
+<http://bauhaus/structuresDeDonnees/composants/dimension/d1000>
+        a qb:DimensionProperty ;
+        rdfs:label 
+                [
+                  a ngsild:Property ;
+                  ngsild:hasValue "Activity of the company"@en ;
+                ] , 
+                [
+                  a ngsild:Property ;
+                  ngsild:hasValue "Activité de l’entreprise"@fr;
+                ];
+        qb:codeList [
+                a ngsild:Relationship ;
+                ngsild:hasObject <http://id.insee.fr/codes/nafr2/naf> ;
+        ] ;
+        qb:concept [
+                a ngsild:Property ;
+                ngsild:hasObject <http://id.insee.fr/concepts/definition/c1632> ;
+        ] ;
+        skos:notation "ACTIVITY" 
 .

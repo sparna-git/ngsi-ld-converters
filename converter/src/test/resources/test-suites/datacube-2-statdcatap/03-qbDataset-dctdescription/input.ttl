@@ -18,15 +18,4 @@
 
 
 <http://bauhaus/structuresDeDonnees/structure/dsd1001> a qb:DataStructureDefinition;
-  dct:created "2021-07-01T11:58:08.642"^^xsd:dateTime;
-  dct:identifier "dsd1001";
-  dct:isRequiredBy "Melodi-Chargement", "Melodi-Diffusion";
-  dct:modified "2021-07-01T12:00:31.583"^^xsd:dateTime;
-  dct:relation "urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=FR1:TOURISME_CAPACITES(1.0)";
-  # mapped to dct:title if no dct:title is present
-  rdfs:label "Capacités des hébergements touristiques"@fr;
-  # ignored
-  insee:disseminationStatus <http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique>;
-  # ignored
-  insee:validationState "Unpublished";
-.
+  dct:description "a description"@fr .

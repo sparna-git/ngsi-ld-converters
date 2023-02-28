@@ -21,6 +21,8 @@ import org.apache.jena.riot.RDFWriter;
 import org.apache.jena.sparql.core.DatasetGraph;
 import org.topbraid.shacl.rules.RuleUtil;
 
+import com.github.jsonldjava.core.JsonLdOptions;
+
 public class NgsiLdShaclRulesConverter implements NgsiLdConverterIfc {
 
 	private static String DATACUBE_RULESET = "datacube-2-statdcatap.ttl";
@@ -36,6 +38,10 @@ public class NgsiLdShaclRulesConverter implements NgsiLdConverterIfc {
 		try(InputStream in = this.getClass().getClassLoader().getResourceAsStream(FRAMING_CONTEXT)) {
 			String frame = new String(in.readAllBytes(), StandardCharsets.UTF_8);
 			ctx.setFrame(frame);
+			JsonLdOptions options = new JsonLdOptions();
+			options.setOmitGraph(true);
+			options.setPruneBlankNodeIdentifiers(true);
+			ctx.setOptions(options);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}		

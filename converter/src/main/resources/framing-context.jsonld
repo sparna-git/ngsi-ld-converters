@@ -3,11 +3,18 @@
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     {
       "dcat": "http://www.w3.org/ns/dcat#",
+      "qb": "http://purl.org/linked-data/cube#",
       "dct":  "http://purl.org/dc/terms/",
       "stat": "http://data.europa.eu/xyz/statdcat-ap/",
       "xsd":  "http://www.w3.org/2001/XMLSchema#",
+      "core": "http://data.europa.eu/m8g/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+      "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
       
       "Dataset": "dcat:Dataset",
+      "DimensionProperty": "qb:DimensionProperty",
       
       "dct:title":{
         "@container":"@language"
@@ -21,5 +28,5 @@
       }
     }
   ],
-  "@type":"Dataset"
+  "@type": [ "Dataset", "DimensionProperty" ]
 }
