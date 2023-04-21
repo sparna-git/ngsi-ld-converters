@@ -14,10 +14,14 @@
 @prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
 @prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
 @prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix ngsild: <https://uri.etsi.org/ngsi-ld/> .
 
 <http://bauhaus/structuresDeDonnees/structure/dsd1001>
         a          <http://www.w3.org/ns/dcat#Dataset> ;
-        dct:title  "Capacités des hébergements touristiques"@fr ;
+        dct:title  [
+                a ngsild:LanguageProperty ;
+                ngsild:languageMap "Capacités des hébergements touristiques"@fr ;
+        ];
         dct:created "2021-07-01T11:58:08.642"^^xsd:dateTime;
         dct:identifier "dsd1001";
         dct:isRequiredBy "Melodi-Chargement", "Melodi-Diffusion";

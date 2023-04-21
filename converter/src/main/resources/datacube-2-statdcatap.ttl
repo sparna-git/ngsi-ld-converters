@@ -118,9 +118,13 @@ this:rdfsLabelOrDctTitle2dctTitle
   rdfs:label "Generates dct:title" ;
   sh:construct """
       CONSTRUCT {
-        $this dct:title ?x .
+        $this dct:title _:p .
+        _:p a ngsild:LanguageProperty .
+        _:p ngsild:languageMap ?x .
       }
       WHERE {
+        # prevent a result to be generated if none is present
+        $this dct:title|rdfs:label ?anything .
         OPTIONAL { $this dct:title ?dctTitle . }
         OPTIONAL { $this rdfs:label ?rdfsLabel . }
         BIND(COALESCE(?dctTitle, ?rdfsLabel) AS ?x)

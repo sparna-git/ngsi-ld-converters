@@ -15,8 +15,9 @@
       
       "Dataset": "dcat:Dataset",
       "DimensionProperty": "qb:DimensionProperty",
-      
-      "dct:title":{
+      "LanguageProperty": "ngsi-ld:LanguageProperty",
+      "languageMap": {
+        "@id": "ngsi-ld:languageMap",
         "@container":"@language"
       },
 
