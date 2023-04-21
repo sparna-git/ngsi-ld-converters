@@ -32,7 +32,7 @@
                 ngsild:hasObject <http://id.insee.fr/codes/nafr2/naf> ;
         ] ;
         qb:concept [
-                a ngsild:Property ;
+                a ngsild:Relationship ;
                 ngsild:hasObject <http://id.insee.fr/concepts/definition/c1632> ;
         ] ;
         skos:notation "ACTIVITY" 

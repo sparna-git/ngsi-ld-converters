@@ -22,7 +22,7 @@
         "object": "http://id.insee.fr/codes/nafr2/naf"
     },
     "qb:concept": {
-        "type": "Property",
+        "type": "Relationship",
         "object": "http://id.insee.fr/concepts/definition/c1632"
     },
     "skos:notation" : "ACTIVITY",

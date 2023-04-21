@@ -20,15 +20,15 @@
 <http://bauhaus/structuresDeDonnees/structure/dsd1001>
         a          <http://www.w3.org/ns/dcat#Dataset> ;
         core:dimension [
-                a ngsild:Property ;
+                a ngsild:Relationship ;
                 ngsild:hasObject sdmx-dimension:timePeriod ;
         ];
         core:statUnitMeasure [
-                a ngsild:Property ;
+                a ngsild:Relationship ;
                 ngsild:hasObject <http://bauhaus/structuresDeDonnees/composants/mesure/m1000> ;
         ];
         core:attribute [
-                a ngsild:Property ;
+                a ngsild:Relationship ;
                 ngsild:hasObject sdmx-attribute:obsStatus ;
         ];
 .

@@ -176,7 +176,7 @@ this:qbDimension2coreDimension
   sh:construct """
       CONSTRUCT {
         $this core:dimension _:p .
-        _:p a ngsild:Property .
+        _:p a ngsild:Relationship .
         _:p ngsild:hasObject ?x .
       }
       WHERE {
@@ -194,7 +194,7 @@ this:qbAttribute2coreAttribute
   sh:construct """
       CONSTRUCT {
         $this core:attribute _:p .
-        _:p a ngsild:Property .
+        _:p a ngsild:Relationship .
         _:p ngsild:hasObject ?x .
       }
       WHERE {
@@ -212,7 +212,7 @@ this:qbMeasure2coreStatUnitMeasure
   sh:construct """
       CONSTRUCT {
         $this core:statUnitMeasure _:p .
-        _:p a ngsild:Property .
+        _:p a ngsild:Relationship .
         _:p ngsild:hasObject ?x .
       }
       WHERE {
@@ -338,7 +338,7 @@ this:reify_qbConcept
   sh:construct """
       CONSTRUCT {
         $this qb:concept _:p .
-        _:p a ngsild:Property .
+        _:p a ngsild:Relationship .
         _:p ngsild:hasObject ?x .
       }
       WHERE {

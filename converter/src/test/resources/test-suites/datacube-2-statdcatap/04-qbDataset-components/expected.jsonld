@@ -2,15 +2,15 @@
     "id": "http://bauhaus/structuresDeDonnees/structure/dsd1001",
     "type": "Dataset",
     "core:dimension": {
-        "type": "Property",
+        "type": "Relationship",
         "object": "sdmx-dimension:timePeriod"
     },
     "core:statUnitMeasure": {
-        "type": "Property",
+        "type": "Relationship",
         "object": "http://bauhaus/structuresDeDonnees/composants/mesure/m1000"
     },
     "core:attribute": {
-        "type": "Property",
+        "type": "Relationship",
         "object": "sdmx-attribute:obsStatus"
     },
 
