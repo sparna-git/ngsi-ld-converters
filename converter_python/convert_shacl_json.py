@@ -41,9 +41,9 @@ def config_logger(name_logger, output_file, level=logging.INFO):
 # configuration of log files
 directory_parent = path_for_loggers()
 delete_file_in_folder(directory_parent)
-dir_log = os.path.join(directory_parent,'log.txt')
+dir_log = os.path.join(directory_parent,'log_debug.txt')
 # log General
-logging.basicConfig(filename=dir_log,level=logging.DEBUG)
+logging.basicConfig(filename=dir_log,level=logging.INFO)
 logger = logging.getLogger()
 # 
 dir_log_1_rules = os.path.join(directory_parent,'1-rules.txt')
@@ -68,7 +68,9 @@ def convert_graph_to_json(shacl_Graph_file,data_Graph_file):
 	'''
 		ShapesGraph(shacl_graph, True, None)
 	'''
+	logger.info("Shape Graph")
 	shape_graph = ShapesGraph(shacl_graph, True, None)
+	logger.info(shape_graph)
 
 	# Lire les règles avec gather_rules
 	'''
@@ -82,6 +84,10 @@ def convert_graph_to_json(shacl_Graph_file,data_Graph_file):
 	# Log for rules	
 	logger_1_rules.info(rules)
 
+	nbNewStatements = apply_rules(rules, data_graph,False)
+	logger.info("Added "+str(nbNewStatements)+" new statements")
+
+
 	#Appliquer les règles sur le graphe de données d'input avec apply_rules
 	'''
 	    apply_rules(shapes_rules: Dict, data_graph: GraphLike, iterate=False)
@@ -90,10 +96,6 @@ def convert_graph_to_json(shacl_Graph_file,data_Graph_file):
 	graphSerialize = data_graph.serialize(format='json-ld')
 	
 	
-	nbNewStatements = apply_rules(rules, data_graph,False)
-	logger.info("Added "+str(nbNewStatements)+" new statements")
-
-
 	# Log
 	logger_2_rules.info(data_graph.serialize(format='turtle'))
 	logger_3_rules.info(graphSerialize)
@@ -137,19 +139,17 @@ if __name__ == '__main__':
 	# Get the json from Graph
 	logger.info("Step 1: (Get Graph serialize with JSON structure output)")
 	graph_json = json.loads(convert_graph_to_json(args.rules,args.data))
-	logger.info(json.dumps(graph_json,indent=2))
 	
 	# Framed with pyLD
 	#jsonld.set_document_loader(loader())
 	logger.info("Step 2: the framed JSON-LD output")
 	jsonld.set_document_loader(loader())
 	output_frame = jsonld.frame(graph_json, datacontext)
-	logger.info(output_frame)
+	
 
 	logger.info("Step 3: Normalize JSON")
 	# Normalized  jsonld.normalize(frame, {'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
-	json_Normalize = jsonld.normalize(graph_json,{'algorithm': 'URDNA2015'})
-	logger.info(json.dumps(graph_json,indent=2))
+	json_Normalize = jsonld.normalize(graph_json,{'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
 	logger_4_nquads.info(json_Normalize)
 
 	write_json_framed(output_frame,args.output)
