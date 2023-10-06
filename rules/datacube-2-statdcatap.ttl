@@ -84,15 +84,7 @@ this:DataStructureDefinition_Shape
   # copy everythingElse
   sh:rule this:copyEverythingElse;
 
-  sh:target [
-      rdf:type sh:SPARQLTarget ;
-      sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
-      sh:select """
-SELECT ?this
-WHERE {
-	?this a qb:DataStructureDefinition .
-}""" ;
-    ] ;
+  sh:targetClass <http://purl.org/linked-data/cube#DataStructureDefinition> ;
 .
 
 
@@ -271,15 +263,7 @@ this:DimensionProperty_Shape
   # copy everythingElse
   sh:rule this:copyEverythingElse_dimensionProperty;
 
-  sh:target [
-      rdf:type sh:SPARQLTarget ;
-      sh:prefixes <http://data.sparna.fr/ontologies/datacube-2-statdcatap> ;
-      sh:select """
-SELECT ?this
-WHERE {
-  ?this a qb:DimensionProperty .
-}""" ;
-    ] ;
+  sh:targetClass <http://purl.org/linked-data/cube#DimensionProperty> ;
 .
 
 this:CreateDimensionProperty
