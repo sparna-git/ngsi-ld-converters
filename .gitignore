@@ -2,3 +2,8 @@
 converter/.settings/
 
 .idea
+converter_python/virtualenv/
+
+converter_python/output.json
+
+converter_python/log.txt

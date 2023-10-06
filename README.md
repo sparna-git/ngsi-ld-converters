@@ -1,4 +1,65 @@
-# ngsi-ld Semantic Converter
+# NGSI-LD Semantic Converter
+
+## Installing the Python script
+
+1. Clone this repository
+
+```
+git clone git@github.com:sparna-git/ngsi-ld-converters.git
+cd ngsi-ld-converters
+```
+
+2. Install pip
+
+```
+sudo apt install python3-pip
+```
+
+On wWindows, PIP is already included for versions of Python > 3.4.
+
+3. Install virtualenv
+
+```
+pip install virtualenv
+# You may need to do this on Linux :
+# sudo apt install python3.10-venv
+```
+
+4. Create virtualenv
+
+```
+python3.10 -m venv virtualenv
+```
+
+5. Activate virtualenv
+
+```
+Windows : virtualenv/Scripts/activate.bat
+Linux : source virtualenv/bin/activate
+```
+
+6. Once in the virtual env, installer the necessary dependencies from `requirements.txt` :
+
+```
+pip install -r requirements.txt
+```
+
+## Running the Python script
+
+1. See the available options by running the script with `--help` flag
+
+```
+python3.10 convert_shacl_json.py --help
+```
+
+You will see the usage message.
+
+2. Run by passing as input the data file to convert, the SHACL rules to apply, and the JSON-LD framing spec to apply, and where to write the final output JSON file. Use the rules and JSON-LD framing files provided in the "rules" folder :
+
+```
+python3.10 convert_shacl_json.py --rules ../rules/datacube-2-statdcatap.ttl  --frame ../rules/framing-context.jsonld --data ../examples/structure-tourism-minimal/structures-tourism-minimal-pretty.ttl --output output.json
+```
+
 
 ## Approach
 
