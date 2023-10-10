@@ -1,11 +1,9 @@
-import sys, os
-import pathlib, logging, json, argparse
+import json
 from rdflib import Graph
 from pyshacl.rules import gather_rules, apply_rules
 from pyshacl import ShapesGraph
 from pyld import jsonld
 from pyld.documentloader import requests
-from pathlib import Path
 
 class transformToJson():
 
