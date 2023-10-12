@@ -525,7 +525,7 @@ if __name__ == '__main__':
 				print(s.transform(data_input))
 		elif os.path.isfile(args.data):
 			#data_file_list.append(Graph().parse(location=args.data, format="turtle"))
-			data_input = Graph().parse(location=f, format="turtle")
+			data_input = Graph().parse(location=args.data, format="turtle")
 			# Call method transform and print the result
 			print(s.transform(data_input))
 		else:
