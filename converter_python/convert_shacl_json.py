@@ -2,18 +2,18 @@ import json
 from rdflib import Graph
 
 from pyshacl import ShapesGraph
+from pyshacl.rules import gather_rules
 from pyld import jsonld
 from pyld.documentloader import requests
+
 # library for rules
 from typing import TYPE_CHECKING, Any, Dict, List, Tuple, Type, Union 
 
 from pyshacl.pytypes import GraphLike
 from pyshacl.shape import Shape
 
-from sparql_custom import SPARQLRule_Custom
-
-from pyshacl.consts import RDF_type, SH_rule, SH_SPARQLRule, SH_TripleRule
-from collections import defaultdict
+from pyshacl.helper import get_query_helper_cls
+from pyshacl.rdfutil import clone_graph
 
 class transformToJson():
 
@@ -29,15 +29,14 @@ class transformToJson():
 		# Créer un Shape objet à partir de l'objet Graph
 		self.logger.info("Shape Graph")
 		shape_graph = ShapesGraph(rules_graph, True, None)
-		self.logger.info(shape_graph)
-
+		
 		## This property getter triggers shapes harvest.
 		shape_graph.shapes
 		
 		# Get all rules
-		#rules = gather_rules(shape_graph,True)
-		rules = gather_rules_custom(shape_graph,True)
-		self.logger.info(rules)
+		rules = gather_rules(shape_graph,True)
+		#rules = gather_rules_custom(shape_graph,True)
+		#self.logger.info(rules)
 
 		# Apply rules
 		#bNewStatements = apply_rules(rules, data_graph,False)
@@ -50,20 +49,13 @@ class transformToJson():
 		else:
 			self.logger.info("Added "+str(nbStatements)+" new statements")
 
-		return result_graph.serialize(format="turtle")
+		return result_graph
 
 	def normalize_graph_json(self,data_graph):
 
 		#convert the data grap to json-ld
 		graphSerialize = data_graph.serialize(format='json-ld')
 				
-		# Log
-		self.logger.info("Graph serialize in Turtle")
-		self.logger.info(data_graph.serialize(format='turtle'))
-		
-		self.logger.info("Graph serialize in jsonld")
-		self.logger.info(graphSerialize)
-
 		# return json-ld output
 		return graphSerialize
 	
@@ -81,10 +73,10 @@ class transformToJson():
 
 		self.logger.info("Step 1: Apply rules")
 		result_sparql = self.apply_rules_graph(self.graph_rules, self.datagraph)
-		self.logger.info(result_sparql)
+		self.logger.info(result_sparql.serialize(format="turtle"))
 
 		
-		graph_json = json.loads(self.normalize_graph_json(self.datagraph))
+		graph_json = json.loads(self.normalize_graph_json(result_sparql))
 		
 		
 		# Framed with pyLD
@@ -104,77 +96,6 @@ class transformToJson():
 		# output json framing file
 		return json.dumps(output_frame, indent=2)
 
-
-def gather_rules_custom(shacl_graph: 'ShapesGraph', iterate_rules=False) -> Dict['Shape', List['SHACLRule']]:
-    """
-
-    :param shacl_graph:
-    :type shacl_graph: ShapesGraph
-    :return:
-    :rtype: Dict[Shape, List[SHACLRule]]
-    """
-    triple_rule_nodes = set(shacl_graph.subjects(RDF_type, SH_TripleRule))
-    sparql_rule_nodes = set(shacl_graph.subjects(RDF_type, SH_SPARQLRule))
-    if shacl_graph.js_enabled:
-        from pyshacl.extras.js.rules import JSRule, SH_JSRule
-
-        js_rule_nodes = set(shacl_graph.subjects(RDF_type, SH_JSRule))
-        use_JSRule: Union[bool, Type] = JSRule
-    else:
-        use_JSRule = False
-        js_rule_nodes = set()
-    overlaps = triple_rule_nodes.intersection(sparql_rule_nodes)
-
-    if len(overlaps) > 0:
-        raise RuleLoadError(
-            "A SHACL Rule cannot be both a TripleRule and a SPARQLRule.",
-            "https://www.w3.org/TR/shacl-af/#rules-syntax",
-        )
-    overlaps = triple_rule_nodes.intersection(js_rule_nodes)
-    if len(overlaps) > 0:
-        raise RuleLoadError(
-            "A SHACL Rule cannot be both a TripleRule and a JSRule.",
-            "https://www.w3.org/TR/shacl-af/#rules-syntax",
-        )
-    overlaps = sparql_rule_nodes.intersection(js_rule_nodes)
-    if len(overlaps) > 0:
-        raise RuleLoadError(
-            "A SHACL Rule cannot be both a SPARQLRule and a JSRule.",
-            "https://www.w3.org/TR/shacl-af/#rules-syntax",
-        )
-
-    
-    used_rules = shacl_graph.subject_objects(SH_rule)
-    ret_rules = defaultdict(list)
-    for sub, obj in used_rules:
-        try:
-            shape: Shape = shacl_graph.lookup_shape_from_node(sub)            
-        except (AttributeError, KeyError):
-            print(AttributeError)
-            print(KeyError)
-            raise RuleLoadError(
-                "The shape that rule is attached to is not a valid SHACL Shape.",
-                "https://www.w3.org/TR/shacl-af/#rules-syntax",
-            )
-        if obj in triple_rule_nodes:
-            rule: SHACLRule = TripleRule(shape, obj, iterate=iterate_rules)            
-        elif obj in sparql_rule_nodes:
-            '''
-            	Update for use a library custom
-            '''
-            rule = SPARQLRule_Custom(shape, obj)
-            
-        elif use_JSRule and callable(use_JSRule) and obj in js_rule_nodes:
-            rule = use_JSRule(shape, obj)
-        else:
-            raise RuleLoadError(
-                "when using sh:rule, the Rule must be defined as either a TripleRule or SPARQLRule.",
-                "https://www.w3.org/TR/shacl-af/#rules-syntax",
-            )
-        ret_rules[shape].append(rule)       
-
-    return ret_rules
-
 def apply_rules_custom(shapes_rules: Dict, data_graph: GraphLike, iterate=False) -> object:
     # short the shapes dict by shapes sh:order before execution
 
@@ -191,12 +112,14 @@ def apply_rules_custom(shapes_rules: Dict, data_graph: GraphLike, iterate=False)
             iterate_limit -= 1
             this_modified = 0
             collect_graph = Graph()
+
             for r in rules:
             	if r.deactivated:
             		continue
-            	n_modified, g = r.apply_custom(data_graph)
+            	# Code for get the result Sparql query and number of statement
+            	n_modified, g = apply_sparql_rules_custom(r,data_graph)
             	this_modified += n_modified
-            	collect_graph += g
+            	collect_graph += g #save the result of graph
             if this_modified > 0:
             	nbStatements += this_modified
             	result_graph += collect_graph
@@ -207,3 +130,54 @@ def apply_rules_custom(shapes_rules: Dict, data_graph: GraphLike, iterate=False)
             break
         
     return nbStatements, result_graph
+
+def apply_sparql_rules_custom(self, data_graph: 'GraphLike'):
+
+		focus_nodes = self.shape.focus_nodes(data_graph)  # uses target nodes to find focus nodes
+		all_added = 0
+		SPARQLQueryHelper = get_query_helper_cls()
+		iterate_limit = 100
+		collect_graph = Graph()
+		while True:
+			if iterate_limit < 1:
+				raise ReportableRuntimeError("Local SPARQLRule iteration exceeded iteration limit of 100.")
+			iterate_limit -= 1
+			added = 0
+			applicable_nodes = self.filter_conditions(focus_nodes, data_graph)
+			construct_graphs = set()
+			gResult = Graph()
+			for a in applicable_nodes:
+				for c in self._constructs:
+					init_bindings = {}
+					found_this = SPARQLQueryHelper.bind_this_regex.search(c)
+					if found_this:
+						init_bindings['this'] = a
+					c = self._qh.apply_prefixes(c)
+					results = data_graph.query(c, initBindings=init_bindings)
+					if results.type != "CONSTRUCT":
+						raise ReportableRuntimeError("Query executed by a SHACL SPARQLRule must be CONSTRUCT query.")
+					this_added = False
+					result_graph = results.graph
+					if result_graph is None:
+						raise ReportableRuntimeError("Query executed by a SHACL SPARQLRule did not return a Graph.")
+					for i in result_graph:
+						if not this_added and i not in data_graph:
+							this_added = True
+							# We only need to know at least one triple was added, then break!
+							break
+					if this_added:
+						added += 1
+						construct_graphs.add(result_graph)
+						# result in new Graph
+						gResult += result_graph
+			if added > 0:
+				for g in construct_graphs:
+					data_graph = clone_graph(g, target_graph=data_graph)                    
+				all_added += added
+				collect_graph += gResult
+				if self.iterate:
+					continue  # Jump up to iterate
+				else:
+					break  # Don't iterate
+			break  # We've reached a local steady state
+		return all_added, collect_graph
