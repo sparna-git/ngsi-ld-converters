@@ -64,13 +64,6 @@ class transformToJson():
 			return requests_loader(url, options={"header":'application/ld+json, application/json;q=0.5'})
 		return loader
 	
-	def complex_encode(object):
-	    # check using isinstance method
-		if isinstance(object, complex):
-			return [object.real, object.imag]
-		# raised error using exception handling if object is not complex
-		raise TypeError(repr(object) + " is not JSON serialized")
-
 	def transform(self, data_graph) -> jsonld:
 
 		self.datagraph = data_graph
@@ -81,17 +74,14 @@ class transformToJson():
 		
 		graph_json = json.loads(self.normalize_graph_json(result_sparql))
 	
-		# Framed with pyLD
-		#self.logger.info("Document Loader.......")
 		jsonld.set_document_loader(self.loader())
-		#self.logger.info(jsonld.set_document_loader(self.loader()))
-
-		self.logger.info("Step 4: the framed JSON-LD output.")
+		
+		self.logger.info("Step 2: the framed JSON-LD output.")
 		output_frame = jsonld.frame(graph_json, self.frame)
 		self.logger.info(output_frame)
 
-		self.logger.info("Step 5: Normalize JSON-LD to n-quads")
-		# Normalized  jsonld.normalize(frame, {'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
+		# Normalize to n-quaeds output 
+		self.logger.info("Step 3: Normalize JSON-LD to n-quads")
 		json_Normalize = jsonld.normalize(graph_json,{'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
 		self.logger.info(json_Normalize)
 
