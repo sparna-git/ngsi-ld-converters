@@ -73,7 +73,7 @@ class transformToJson():
 		self.logger.info(result_sparql.serialize(format="turtle"))
 		
 		graph_json = json.loads(self.normalize_graph_json(result_sparql))
-	
+
 		jsonld.set_document_loader(self.loader())
 		
 		self.logger.info("Step 2: the framed JSON-LD output.")
@@ -86,9 +86,7 @@ class transformToJson():
 		self.logger.info(json_Normalize)
 
 		# output json framing file
-		output_graph = json.dumps(output_frame,indent=2,ensure_ascii=False)
 		return output_frame
-
 
 def apply_rules_custom(shapes_rules: Dict, data_graph: GraphLike, iterate=False) -> object:
     # short the shapes dict by shapes sh:order before execution
