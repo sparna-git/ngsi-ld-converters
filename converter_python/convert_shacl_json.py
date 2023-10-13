@@ -35,15 +35,12 @@ class transformToJson():
 		
 		# Get all rules
 		rules = gather_rules(shape_graph,True)
-		#rules = gather_rules_custom(shape_graph,True)
 		#self.logger.info(rules)
 
 		# Apply rules
-		#bNewStatements = apply_rules(rules, data_graph,False)
 		r = apply_rules_custom(rules, data_graph,False)
 		nbStatements, result_graph = r
 
-		#nbNewStatements, gresult = rules_custom.apply_rules_custom(rules, data_graph,False)
 		if nbStatements == 0:
 			self.logger.warning("not include statement. ")
 		else:
@@ -67,6 +64,13 @@ class transformToJson():
 			return requests_loader(url, options={"header":'application/ld+json, application/json;q=0.5'})
 		return loader
 	
+	def complex_encode(object):
+	    # check using isinstance method
+		if isinstance(object, complex):
+			return [object.real, object.imag]
+		# raised error using exception handling if object is not complex
+		raise TypeError(repr(object) + " is not JSON serialized")
+
 	def transform(self, data_graph) -> jsonld:
 
 		self.datagraph = data_graph
@@ -74,11 +78,9 @@ class transformToJson():
 		self.logger.info("Step 1: Apply rules")
 		result_sparql = self.apply_rules_graph(self.graph_rules, self.datagraph)
 		self.logger.info(result_sparql.serialize(format="turtle"))
-
 		
 		graph_json = json.loads(self.normalize_graph_json(result_sparql))
-		
-		
+	
 		# Framed with pyLD
 		#self.logger.info("Document Loader.......")
 		jsonld.set_document_loader(self.loader())
@@ -86,7 +88,7 @@ class transformToJson():
 
 		self.logger.info("Step 4: the framed JSON-LD output.")
 		output_frame = jsonld.frame(graph_json, self.frame)
-		self.logger.info(json.dumps(output_frame,indent=2))
+		self.logger.info(output_frame)
 
 		self.logger.info("Step 5: Normalize JSON-LD to n-quads")
 		# Normalized  jsonld.normalize(frame, {'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
@@ -94,7 +96,9 @@ class transformToJson():
 		self.logger.info(json_Normalize)
 
 		# output json framing file
-		return json.dumps(output_frame, indent=2)
+		output_graph = json.dumps(output_frame,indent=2,ensure_ascii=False)
+		return output_frame
+
 
 def apply_rules_custom(shapes_rules: Dict, data_graph: GraphLike, iterate=False) -> object:
     # short the shapes dict by shapes sh:order before execution
