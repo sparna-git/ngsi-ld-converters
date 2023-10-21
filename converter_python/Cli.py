@@ -2,7 +2,7 @@ import os
 import pathlib, logging, json, argparse
 from rdflib import Graph
 from pathlib import Path
-from convert_shacl_json import transformToJson 
+from JsonLdSerializer import JsonLdSerializer 
 import pprint
 
 def main_log():
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 		frame = json.loads(open_frame_file.read())
 
 		# Generate instance
-		s = transformToJson(graph_rules_file,frame, logger)
+		s = JsonLdSerializer(graph_rules_file,frame, logger)
 
 		# read a directory or a file data
 		if os.path.isdir(args.data):

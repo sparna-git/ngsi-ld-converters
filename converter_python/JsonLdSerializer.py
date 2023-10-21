@@ -15,7 +15,7 @@ from pyshacl.shape import Shape
 from pyshacl.helper import get_query_helper_cls
 from pyshacl.rdfutil import clone_graph
 
-class transformToJson():
+class JsonLdSerializer():
 
 	def __init__(self, graph_rules, frame, logger) -> object:
 
