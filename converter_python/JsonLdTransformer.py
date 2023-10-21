@@ -1,4 +1,4 @@
-import json
+import logging, json
 from rdflib import Graph
 
 from pyshacl import ShapesGraph
@@ -15,77 +15,71 @@ from pyshacl.shape import Shape
 from pyshacl.helper import get_query_helper_cls
 from pyshacl.rdfutil import clone_graph
 
-class JsonLdSerializer():
 
-	def __init__(self, graph_rules, frame, logger) -> object:
+logger = logging.getLogger(__name__)
+
+class JsonLdTransformer():
+
+	def __init__(self, graph_rules, frame) -> object:
 
 		self.graph_rules = graph_rules
 		self.frame = frame
-		self.logger = logger
 
-	def apply_rules_graph(self,rules_graph, data_graph):
-
-
-		# Créer un Shape objet à partir de l'objet Graph
-		self.logger.info("Shape Graph")
-		shape_graph = ShapesGraph(rules_graph, True, None)
+		# Loads the rules graph
+		logger.info("Shape Graph")
+		self.shapes_graph = ShapesGraph(graph_rules, True, None)
 		
 		## This property getter triggers shapes harvest.
-		shape_graph.shapes
-		
-		# Get all rules
-		rules = gather_rules(shape_graph,True)
-		#self.logger.info(rules)
+		self.shapes_graph.shapes
+
+		# loads the rules from the SHACL rules file
+		self.rules = gather_rules(self.shapes_graph,True)
+
+
+	def apply_rules_graph(self, data_graph):
 
 		# Apply rules
-		r = apply_rules_custom(rules, data_graph,False)
-		nbStatements, result_graph = r
+		nbStatements, result_graph = apply_rules_custom(self.rules, data_graph, False)
 
 		if nbStatements == 0:
-			self.logger.warning("not include statement. ")
+			logger.warning("No statements was generated from the rules")
 		else:
-			self.logger.info("Added "+str(nbStatements)+" new statements")
+			logger.info("Created "+str(nbStatements)+" statements from rules")
 
 		return result_graph
-
-	def normalize_graph_json(self,data_graph):
-
-		#convert the data grap to json-ld
-		graphSerialize = data_graph.serialize(format='json-ld')
-				
-		# return json-ld output
-		return graphSerialize
 	
-	def loader(self,*args, **kwargs):
+	def buildDocumentLoader(self,*args, **kwargs):
 
 		requests_loader = requests.requests_document_loader(*args, **kwargs)
 
 		def loader(url,options={}):
-			return requests_loader(url, options={"header":'application/ld+json, application/json;q=0.5'})
+			# for the moment, just reuse the default loader
+			return requests_loader(url, options)
+			# This is where we could adjust request headers to fetch context e.g.
+			# return requests_loader(url, options={"header":'application/ld+json, application/json;q=0.5'})
+			# This is also where we could default to a local cached file, if needed
+		
 		return loader
 	
 	def transform(self, data_graph) -> jsonld:
 
-		self.datagraph = data_graph
-
-		self.logger.info("Step 1: Apply rules")
-		result_sparql = self.apply_rules_graph(self.graph_rules, self.datagraph)
-		self.logger.info(result_sparql.serialize(format="turtle"))
+		logger.info("Step 1: Apply rules")
+		result_sparql = self.apply_rules_graph(data_graph)
+		logger.info(result_sparql.serialize(format="turtle"))
 		
-		graph_json = json.loads(self.normalize_graph_json(result_sparql))
+		logger.info("Step 2: Serialize rules output in JSON-LD (raw)")
+		jsonSerialization = result_sparql.serialize(format='json-ld')
+		graph_json = json.loads(jsonSerialization)
 
-		jsonld.set_document_loader(self.loader())
+		# sets a document loader on the jsonld lib
+		# even if we don't use it right now
+		jsonld.set_document_loader(self.buildDocumentLoader())
 		
-		self.logger.info("Step 2: the framed JSON-LD output.")
+		logger.info("Step 3: frame the raw JSON-LD serialization.")
 		output_frame = jsonld.frame(graph_json, self.frame)
-		self.logger.info(output_frame)
+		logger.info(output_frame)
 
-		# Normalize to n-quaeds output 
-		self.logger.info("Step 3: Normalize JSON-LD to n-quads")
-		json_Normalize = jsonld.normalize(graph_json,{'algorithm': 'URDNA2015', 'format': 'application/n-quads'})
-		self.logger.info(json_Normalize)
-
-		# output json framing file
+		# output result of framing
 		return output_frame
 
 def apply_rules_custom(shapes_rules: Dict, data_graph: GraphLike, iterate=False) -> object:

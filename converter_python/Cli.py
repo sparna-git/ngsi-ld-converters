@@ -2,7 +2,7 @@ import os
 import pathlib, logging, json, argparse
 from rdflib import Graph
 from pathlib import Path
-from JsonLdSerializer import JsonLdSerializer 
+from JsonLdTransformer import JsonLdTransformer
 import pprint
 
 def main_log():
@@ -30,11 +30,13 @@ if __name__ == '__main__':
 		- use the method main_log for config the path and create à folder 
 	'''
 	logging.basicConfig(filename=main_log(),level=logging.INFO)
-	logger = logging.getLogger()
+	logger = logging.getLogger(__name__)
 
 	# Header arguments
-	parser = argparse.ArgumentParser(prog='convert_shacl_json',
-										description='Convert a Graph rules to JSON Framing ')
+	parser = argparse.ArgumentParser(
+		prog='Cli',
+		description='Converts an input RDF files using SHACL rules, then serialize the result using JSON-LD framing'
+	)
 	# Add arguments
 	parser.add_argument('--r','--rules',help='Path to a input rules file',type=pathlib.Path,dest='rules')
 	parser.add_argument('--d','--data',help='directory or file input',type=pathlib.Path,dest='data')
@@ -45,17 +47,17 @@ if __name__ == '__main__':
 	file_list = []
 	data_file_list = []
 	output_result_framing = []
-	if (args.rules and args.data and  args.frame):
+	if (args.rules and args.data and args.frame):
 
 		# read a rule files
-		graph_rules_file = Graph().parse(location=args.rules, format="turtle")
+		graph_rules = Graph().parse(location=args.rules, format="turtle")
 
-		# read a frame file
+		# read JSON-LD framing spec file
 		open_frame_file = args.frame.open('r')
 		frame = json.loads(open_frame_file.read())
 
-		# Generate instance
-		s = JsonLdSerializer(graph_rules_file,frame, logger)
+		# Create instance of JsonLdTransformer with rules graph and framing spec
+		transformer = JsonLdTransformer(graph_rules,frame)
 
 		# read a directory or a file data
 		if os.path.isdir(args.data):
@@ -66,14 +68,16 @@ if __name__ == '__main__':
 				data_input = Graph().parse(location=f, format="turtle")
 
 				# Call method transform and print the result  
-				output_result_framing.append(s.transform(data_input))
+				output_result_framing.append(transformer.transform(data_input))
 				#print(s.transform(data_input))
+		
 		if os.path.isfile(args.data):
-			data_input = Graph().parse(location=args.data, format="turtle")
-			output_result_framing.append(s.transform(data_input))
+			data_graph = Graph().parse(location=args.data, format="turtle")
+			output_result_framing.append(transformer.transform(data_graph))
 
 		if len(output_result_framing) > 0:
 			for output in output_result_framing:
 				pprint.pprint(output, indent=2)
+	
 	else:
 		parser.print_help()
