@@ -5,43 +5,41 @@ from pathlib import Path
 from JsonLdTransformer import JsonLdTransformer
 import pprint
 
+logger = logging.getLogger(__name__)
+
 def main_log():
-	# directory
+	# current directory
 	_path_app = os.getcwd()
-	# Log
-	dirrectory_log = os.path.join(_path_app, "log")
-	if not os.path.exists(dirrectory_log):
-		# delete fole
-		os.mkdir(dirrectory_log)
+	
+	# log folder
+	directory_log = os.path.join(_path_app, "log")
+	# create folder if it does not exist
+	if not os.path.exists(directory_log):
+		os.mkdir(directory_log)
 	else:
-		for f in os.listdir(dirrectory_log):
-			file = os.path.join(dirrectory_log, f)
+		# otherwise delete all files in it
+		for f in os.listdir(directory_log):
+			file = os.path.join(directory_log, f)
 			os.remove(file)
 
-	dir_log = os.path.join(dirrectory_log,'log.txt')
+	dir_log = os.path.join(directory_log,'log.txt')
 
 	return dir_log
 
 if __name__ == '__main__':
 
-	'''
-		loggin is the library for save all step in a log file
+	logging.basicConfig(filename=main_log(),level=logging.DEBUG)
 
-		- use the method main_log for config the path and create à folder 
-	'''
-	logging.basicConfig(filename=main_log(),level=logging.INFO)
-	logger = logging.getLogger(__name__)
-
-	# Header arguments
+	# CLI arguments
 	parser = argparse.ArgumentParser(
 		prog='Cli',
-		description='Converts an input RDF files using SHACL rules, then serialize the result using JSON-LD framing'
+		description='Converts an input RDF file using SHACL rules, then serializes the result using JSON-LD framing'
 	)
 	# Add arguments
 	parser.add_argument('--r','--rules',help='Path to a input rules file',type=pathlib.Path,dest='rules')
 	parser.add_argument('--d','--data',help='directory or file input',type=pathlib.Path,dest='data')
 	parser.add_argument('--f','--frame',help='Path to a input JSON file',type=pathlib.Path,dest='frame')
-	#try:
+	# Parse args
 	args = parser.parse_args()
 	
 	file_list = []
