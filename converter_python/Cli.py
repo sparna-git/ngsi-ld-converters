@@ -27,10 +27,13 @@ def main_log():
 
 	return dir_log
 
-def write_file(outputfile,result):
-
+def write_json_to_file(outputfile,jsonData):
+	"""
+	Dumps a JSON data structure into an output file
+	"""
+	
 	with open(outputfile,'w') as wfile:
-		json.dump(result,wfile,indent=2, sort_keys=True)
+		json.dump(jsonData,wfile,indent=2,sort_keys=True)
 
 
 if __name__ == '__main__':
@@ -47,6 +50,7 @@ if __name__ == '__main__':
 	parser.add_argument('--d','--data',help='Path to a input file', required=True,type=pathlib.Path,dest='data')
 	parser.add_argument('--f','--frame',help='Path to a input JSON file', required=True,type=pathlib.Path,dest='frame')
 	parser.add_argument('--o','--output',help='output JSON file', required=True,dest='outputFile')
+	
 	# Parse args
 	args = parser.parse_args()
 	
@@ -66,11 +70,11 @@ if __name__ == '__main__':
 			# Read data file
 			data_graph = Graph().parse(location=args.data)
 
-			# 
+			# apply transform
 			result = transformer.transform(data_graph)
 
 			# Write the result
 			if result:
-				write_file(args.outputFile,result)			
+				write_json_to_file(args.outputFile,result)			
 	else:
 		parser.print_help()
