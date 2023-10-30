@@ -1,0 +1,66 @@
+# 1. Install poetry
+# curl -sSL https://install.python-poetry.org | python3 -
+# 2. install deps
+# poetry install
+# 3. run
+# poetry run python3.10 Cli.py --rules ../rules/datacube-2-statdcatap.ttl  --frame ../rules/framing-context.jsonld --data test-small/input.ttl --output output.json
+
+[tool.poetry]
+name = "JsonLdTransformer"
+version = "0.1.0"
+description = "Converts an input RDF file using SHACL rules, then serializes the result using JSON-LD framing"
+authors = ["INSEE"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.31.0"
+pyld = "^2.0.3"
+pyshacl = "^0.23.0"
+rdflib = "^6.3.2"
+ruff = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = ["E4", "E7", "E9", "F"]
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+per-file-ignores = {}
+
+# Same as Black.
+line-length = 88
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.8
+target-version = "py10"

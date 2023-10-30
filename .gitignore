@@ -11,3 +11,5 @@ converter_python/log.txt
 converter_python/__pycache__/
 
 converter_python/log/
+
+converter_python/poetry.lock
