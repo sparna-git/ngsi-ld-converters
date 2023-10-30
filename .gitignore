@@ -7,3 +7,7 @@ converter_python/virtualenv/
 converter_python/output.json
 
 converter_python/log.txt
+
+converter_python/__pycache__/
+
+converter_python/log/
