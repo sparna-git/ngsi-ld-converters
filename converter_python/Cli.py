@@ -37,8 +37,9 @@ if __name__ == '__main__':
 	)
 	# Add arguments
 	parser.add_argument('--r','--rules',help='Path to a input rules file',type=pathlib.Path,dest='rules')
-	parser.add_argument('--d','--data',help='directory or file input',type=pathlib.Path,dest='data')
+	parser.add_argument('--d','--data',help='Path to a input file',type=pathlib.Path,dest='data')
 	parser.add_argument('--f','--frame',help='Path to a input JSON file',type=pathlib.Path,dest='frame')
+	parser.add_argument('--o','--output',help='output JSON file',type=argparse.FileType('w', encoding='UTF-8'),dest='outputFile')
 	# Parse args
 	args = parser.parse_args()
 	
@@ -57,18 +58,6 @@ if __name__ == '__main__':
 		# Create instance of JsonLdTransformer with rules graph and framing spec
 		transformer = JsonLdTransformer(graph_rules,frame)
 
-		# read a directory or a file data
-		if os.path.isdir(args.data):
-			file_list	= [p for p in pathlib.Path(args.data).iterdir() if p.is_file()]
-			for f in file_list:
-				logger.info("--------------------------------"+str(f)+"--------------------------------")
-				
-				data_input = Graph().parse(location=f, format="turtle")
-
-				# Call method transform and print the result  
-				output_result_framing.append(transformer.transform(data_input))
-				#print(s.transform(data_input))
-		
 		if os.path.isfile(args.data):
 			data_graph = Graph().parse(location=args.data, format="turtle")
 			output_result_framing.append(transformer.transform(data_graph))
