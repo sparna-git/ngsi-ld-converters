@@ -1,16 +1,14 @@
 import logging, json
 from rdflib import Graph
-
 from pyshacl import ShapesGraph
 from pyshacl.rules import gather_rules
 from pyld import jsonld
 from pyld.documentloader import requests
 
 # library for rules
-from typing import TYPE_CHECKING, Any, Dict, List, Tuple, Type, Union 
+from typing import Any, Dict, List, Tuple  #TYPE_CHECKING, Union, Type
 
 from pyshacl.pytypes import GraphLike
-from pyshacl.shape import Shape
 
 from pyshacl.helper import get_query_helper_cls
 from pyshacl.rdfutil import clone_graph
@@ -90,7 +88,6 @@ class JsonLdTransformer():
 		# output result of framing
 		return output_frame
 
-	
 	def __buildDocumentLoader(self,*args, **kwargs):
 		"""
 		Builds a document loader to pass to jsonld lib.
@@ -152,7 +149,7 @@ def apply_rules(shapes_rules: Dict, data_graph: GraphLike, iterate=False) -> Gra
         
     return nbStatements, result_graph
 
-def apply_sparql_rule(rule: SPARQLRule, data_graph: GraphLike) -> Graph:
+def apply_sparql_rule(rule, data_graph: GraphLike) -> Graph:
 	"""
 	This is a copy of pyshacl apply_sparql_rules method, the difference being that
 	it *returns* the result of applying the rules in a new Graph instead of adding the triples
