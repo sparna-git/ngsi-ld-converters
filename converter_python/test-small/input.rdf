@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:qb="http://purl.org/linked-data/cube#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:ns0="http://rdf.insee.fr/def/base#">
+
+  <qb:DataStructureDefinition rdf:about="http://bauhaus/structuresDeDonnees/structure/dsd1001">
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-01T11:58:08.642</dc:created>
+    <dc:identifier>dsd1001</dc:identifier>
+    <dc:isRequiredBy>Melodi-Chargement</dc:isRequiredBy>
+    <dc:isRequiredBy>Melodi-Diffusion</dc:isRequiredBy>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-01T12:00:31.583</dc:modified>
+    <dc:relation>urn:sdmx:org.sdmx.infomodel.metadatastructure.MetadataStructure=FR1:TOURISME_CAPACITES(1.0)</dc:relation>
+    <rdfs:label xml:lang="fr">Capacités des hébergements touristiques</rdfs:label>
+    <ns0:disseminationStatus rdf:resource="http://id.insee.fr/codes/base/statutDiffusion/PublicGenerique"/>
+    <ns0:validationState>Unpublished</ns0:validationState>
+  </qb:DataStructureDefinition>
+
+</rdf:RDF>
