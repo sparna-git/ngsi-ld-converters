@@ -1,0 +1,2 @@
+- Why are only DimensionProperty converted and not Measures and Attributes ?
+- Why is dct:language generated from the language of rdfs:label ?
